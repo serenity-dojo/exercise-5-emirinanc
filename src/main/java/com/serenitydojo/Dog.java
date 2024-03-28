@@ -1,22 +1,20 @@
 package com.serenitydojo;
 
-public class Dog {
+public class Dog extends Pet {
     private String name;
     private String favoriteToy;
     private int age;
     private boolean isFed = false;
 
+    static final String PLAY = "plays with bone";
+
     public static final String DOG_NOISE = "Woof";
 
     public Dog(String name, String favoriteToy, int age) {
-        this.name = name;
+        super(name,age);
         this.favoriteToy = favoriteToy;
-        this.age = age;
     }
 
-    public String getName() {
-        return name;
-    }
 
     public void setName(String name) {
         this.name = name;
@@ -30,9 +28,7 @@ public class Dog {
         this.favoriteToy = favoriteToy;
     }
 
-    public int getAge() {
-        return age;
-    }
+
 
     public void setAge(int age) {
         this.age = age;
@@ -47,5 +43,9 @@ public class Dog {
 
     public void feed() {
         this.isFed = true;
+    }
+
+    public String play(){
+        return PLAY;
     }
 }
